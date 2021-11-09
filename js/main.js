@@ -15,13 +15,8 @@ window.addEventListener('DOMContentLoaded', function () {
         apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
         emailList: [],
         nOfEmail: 10,
-        
       },
       methods: {
-        getEmails() {
-          
-          
-        },
       },
       mounted() {
         for (let i = 0; i < this.nOfEmail; i++) {
