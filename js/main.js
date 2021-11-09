@@ -10,14 +10,25 @@ Vue.config.devtools = true;
 
 window.addEventListener('DOMContentLoaded', function () {
   new Vue({
-      el: '',
+      el: '#root',
       data: {
-        username: '',
+        apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
+        emailList: [],
+        nOfEmail: 10,
+        
       },
       methods: {
-        function () {
+        getEmails() {
+          
           
         },
       },
+      mounted() {
+        for (let i = 0; i < this.nOfEmail; i++) {
+          axios.get(this.apiUrl).then((element) => {
+            this.emailList.push(element.data.response);
+          });
+        }
+      }
   });
 })
